@@ -1,0 +1,29 @@
+$icon-path: '../icon/';
+
+i[class*='icon-'] {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+$icon: setting, close, edit, confirm, record;
+@each $item in $icon {
+  .icon-#{$item} {
+    background-image: url($icon-path + '#{$item}.svg');
+  }
+}
+
+i.size-24 {
+  width: 24px;
+  height: 24px;
+}
+
+[class*='img-'] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}

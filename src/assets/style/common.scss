@@ -1,0 +1,155 @@
+/*火花按钮*/
+$spark-color: #724dd3;
+$spark-btn-bg: #eee;
+
+@keyframes topBubbles {
+    0% {
+        background-position: 5% 90%,10% 90%,10% 90%,15% 90%,25% 90%,25% 90%,40% 90%,55% 90%,70% 90%;
+    }
+
+    50% {
+        background-position: 0 80%,0 20%,10% 40%,20% 0,30% 30%,22% 50%,50% 50%,65% 20%,90% 30%;
+    }
+
+    to {
+        background-position: 0 70%,0 10%,10% 30%,20% -10%,30% 20%,22% 40%,50% 40%,65% 10%,90% 20%;
+        background-size: 0 0,0 0,0 0,0 0,0 0,0 0;
+    }
+}
+
+@keyframes bottomBubbles {
+    0% {
+        background-position: 10% -10%,30% 10%,55% -10%,70% -10%,85% -10%,70% -10%,70% 0%;
+    }
+
+    50% {
+        background-position: 0 80%,20% 80%,45% 60%,60% 100%,75% 70%,95% 60%,105% 0;
+    }
+
+    to {
+        background-position: 0 90%,20% 90%,45% 70%,60% 110%,75% 80%,95% 70%,110% 10%;
+        background-size: 0 0,0 0,0 0,0 0,0 0,0 0;
+    }
+}
+
+.spark-button {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    padding: 0 24px;
+    line-height: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    user-select: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: $spark-btn-bg;
+    transition: all ease-in .25s;
+
+    &.active {
+        background-color: $spark-color;
+        color: #fff;
+    }
+}
+
+.spark-button:before, .spark-button:after {
+    position: absolute;
+    content: "";
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out .5s;
+    background-repeat: no-repeat
+}
+
+.spark-button:hover {
+    color: #fff;
+    transform: scale(.99);
+    background-color: $spark-color;
+    box-shadow: 0 2px 16px $spark-color;
+    background-image: radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,transparent 10%,$spark-color 15%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%);
+    background-size: 15% 15%,20% 20%,18% 18%,20% 20%,15% 15%,10% 10%,20% 20%;
+    transition: all .25s;
+}
+
+.spark-button:hover:before {
+    top: -75%;
+    background-image: radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,transparent 20%,$spark-color 20%,transparent 30%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,transparent 10%,$spark-color 15%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%);
+    background-size: 10% 10%,20% 20%,15% 15%,20% 20%,18% 18%,10% 10%,15% 15%,10% 10%,18% 18%;
+    animation: topBubbles ease-in-out .75s forwards;
+}
+
+.spark-button:hover:after {
+    bottom: -75%;
+    background-image: radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,transparent 10%,$spark-color 15%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%),radial-gradient(circle,$spark-color 20%,transparent 20%);
+    background-size: 15% 15%,20% 20%,18% 18%,20% 20%,15% 15%,10% 10%,20% 20%;
+    animation: bottomBubbles ease-in-out .75s forwards
+}
+
+.spark-button:active {
+    transform: scale(.9);
+    background-color: $spark-color;
+    box-shadow: none;
+    transition: all .25s;
+}
+
+#root {
+    .img-bg {
+        background-repeat: repeat;
+        background-size: 960px 480px;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        margin-left: 350px;
+    }
+    10% {
+        margin-left: 0;
+    }
+    90% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 350px;
+    }
+}
+
+.primary-color {
+    color: $spark-color;
+    cursor: pointer;
+}
+
+#toast {
+    position: fixed;
+    z-index: 999;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    max-width: 90vw;
+
+    .wrapper {
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 350px;
+        padding: 16px;
+        font-size: 14px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        background: rgba(0, 0, 0, .7);
+        color: #fff;
+        backdrop-filter: blur(3px);
+        animation: moveIn;
+
+        .main {
+            width: 100%;
+            word-break: break-all;
+
+            .message {
+                font-size: 14px;
+            }
+        }
+    }
+}

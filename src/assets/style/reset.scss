@@ -1,0 +1,82 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  font-family: Boxed, PingFangSC-Regular, Noto Sans SC, BoxedLig, Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 14px;
+  background: #f6f8f9;
+  user-select: none;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, form, button, input, textarea, th, td, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+img {
+  border: 0;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#root::-webkit-scrollbar{
+  display: none;
+}
+
+::-webkit-scrollbar{
+  display: block;
+  width:10px;
+  height:10px;
+}
+::-webkit-scrollbar-track{
+  background: rgb(239, 239, 239);
+  border-radius:2px;
+}
+::-webkit-scrollbar-thumb{
+  background: #bfbfbf;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #949494;
+}
+::-webkit-scrollbar-corner{
+  background: #179a16;
+}

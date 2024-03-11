@@ -1,0 +1,79 @@
+#memberList {
+  display: none;
+}
+
+.award-config {
+  display: flex;
+  height: 100%;
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 0 50px;
+
+    .input-item {
+      margin-bottom: 25px;
+    }
+
+    .btn-group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+
+      .spark-button {
+        width: 110px;
+      }
+    }
+  }
+
+  .form-list {
+    flex: 1;
+    padding: 30px 20px ;
+    border-left: 1px solid #d9d9d9;
+    text-align: center;
+
+    .t-body {
+      overflow: auto;
+      height: calc(100% - 41px);
+    }
+
+    .th, .tr {
+      display: flex;
+
+      .edit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .td {
+        overflow: hidden;
+        width: 20%;
+        padding: 3px 5px;
+        line-height: 2.5;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        input {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    .excel-list {
+      padding-top: 15px;
+      border-top: 1px solid #d9d9d9;
+      text-align: left;
+
+      .spark-button {
+        margin-right: 10px;
+      }
+    }
+  }
+}

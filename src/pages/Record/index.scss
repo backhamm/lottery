@@ -1,0 +1,42 @@
+.record {
+  .tab-bar {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .record-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 40px;
+    font-size: 20px;
+    background: url("../../assets/img/recordBg.jpg") no-repeat center/cover;
+    color: #fff;
+
+    .record-title {
+      padding: 20px 0 10px;
+      line-height: 40px;
+      text-align: center;
+      color: #f4c95d;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .record-main {
+      overflow: auto;
+      flex: 1;
+    }
+
+    .item {
+      display: inline-block;
+      width: 20%;
+      white-space: nowrap;
+      text-align: center;
+      line-height: 2;
+    }
+  }
+
+  .export {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

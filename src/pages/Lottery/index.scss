@@ -1,0 +1,348 @@
+@keyframes scroll {
+  from {
+    transform: translateY(calc(-100% + 96px));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollStep2 {
+  from {
+    transform: translateY(calc(-10% + 96px));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(0.96);
+  }
+}
+
+@keyframes breathe2 {
+  0% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(0.96);
+  }
+}
+
+.lottery {
+  align-items: center;
+  width: 1329px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  .lottery-content {
+    position: relative;
+    width: 100%;
+    height: 976px;
+    display: flex;
+    justify-content: space-between;
+
+    .lottery-left {
+      z-index: 3;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 300px;
+
+      .winning-info {
+        height: 368px;
+        padding-top: 89px;
+        font-weight: 600;
+        font-size: 32px;
+        color: #6e4acd;
+        background: url("../../assets/img/infoBg.png") no-repeat;
+
+        .lottery-grade {
+          height: 27px;
+          font-size: 20px;
+          color: #fff;
+        }
+
+        .lottery-name {
+          height: 36px;
+          margin: 27px 0 15px;
+          font-size: 24px;
+          color: #ab640e;
+        }
+      }
+
+      .winning-content {
+        height: 300px;
+        padding: 0 20px;
+        margin-top: 20px;
+        background: url("../../assets/img/listBg.png") no-repeat;
+
+        .winning-title {
+          height: 60px;
+          line-height: 60px;
+          font-size: 24px;
+          font-weight: 600;
+          color: #f9ea8a;
+        }
+
+        .winning-line {
+          height: 2px;
+          background: linear-gradient(to right, rgba(113, 87, 177, 0), rgba(113, 87, 177, 1), rgba(113, 87, 177, 0));
+        }
+
+        .winning-list {
+          overflow: auto;
+          height: 235px;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          &.one {
+            .winning-item {
+              height: 100%;
+              line-height: 222px;
+              font-size: 32px;
+            }
+          }
+
+          .winning-item {
+            position: relative;
+            height: 46px;
+            line-height: 46px;
+            font-size: 20px;
+            color: #fff;
+
+            &:last-child {
+              .winning-line {
+                height: 0;
+              }
+            }
+
+            .winning-line {
+              height: 1px;
+            }
+
+            .cancel-btn {
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translateY(-50%);
+              width: 22px;
+              height: 22px;
+              background: url("../../assets/img/x.png") no-repeat;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .lottery-btn {
+      z-index: 3;
+      position: absolute;
+      left: 0;
+      bottom: 50px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .btn-item {
+        height: 40px;
+        padding: 0 20px;
+        margin: 0 5px 10px;
+        line-height: 40px;
+        border-radius: 6px;
+        background: rgba(0,0,0,.3);
+        color: #ccc;
+        cursor: pointer;
+        transition: all .3s;
+
+        &.active {
+          background: #6c5cd5;
+        }
+      }
+    }
+
+    .lottery-main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .lottery-table {
+        z-index: 1;
+        position: absolute;
+        right: -100px;
+        bottom: 100px;
+        width: 1153px;
+        height: 757px;
+        background: url("../../assets/img/table.png") no-repeat center;
+
+        .table-content {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+
+          .bubble-area {
+            position: absolute;
+            top: 10px;
+            left: 125px;
+            display: flex;
+            justify-content: space-between;
+            align-content: start;
+            flex-wrap: wrap;
+            width: 900px;
+            height: 500px;
+
+            &.more {
+              top: -90px;
+            }
+
+            .bubble {
+              padding-top: 40px;
+              width: 130px;
+              height: 140px;
+              margin: 5px;
+              line-height: 1.3;
+              font-size: 18px;
+              font-weight: 600;
+              word-break: break-all;
+              background: url("../../assets/img/bubble.png") no-repeat center/cover;
+              color: #f9ea00;
+
+              &.mini {
+                width: 80px;
+                height: 85px;
+                padding-top: 25px;
+                line-height: 1;
+                font-size: 14px;
+              }
+            }
+          }
+
+          .lottery-pot {
+            width: 455px;
+            height: 361px;
+            background: url("../../assets/img/pot.png") no-repeat center;
+            animation-name: breathe;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: 4s;
+
+            &.start {
+              animation-name: breathe2;
+              animation-iteration-count: 7;
+              animation-duration: 0.3s;
+            }
+          }
+
+          .lottery-gold {
+            z-index: 2;
+            position: absolute;
+            top: 410px;
+            left: 320px;
+            width: 566px;
+            height: 144px;
+            background: url("../../assets/img/gold.png") no-repeat center;
+          }
+
+          .operate-btn {
+            position: absolute;
+            left: 0;
+            bottom: 90px;
+            width: 100%;
+
+            .btn-redraw, .btn-start {
+              display: inline-block;
+              width: 129px;
+              height: 86px;
+              cursor: pointer;
+            }
+
+            .btn-start {
+              margin-right: 10px;
+              background: url("../../assets/img/start.png") no-repeat center;
+            }
+
+            .btn-redraw {
+              background: url("../../assets/img/redraw.png") no-repeat center;
+            }
+          }
+
+        }
+      }
+
+      .lottery-slot {
+        position: relative;
+        width: 1329px;
+        height: 100%;
+        background: url("../../assets/img/slot.png") no-repeat center;
+
+        .slot-content {
+          overflow: hidden;
+          position: absolute;
+          left: 721px;
+          bottom: 418px;
+          width: 221px;
+          height: 96px;
+
+          .user-list {
+            animation-name: scroll;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            &.step2 {
+              animation-name: scrollStep2;
+              animation-iteration-count: 1;
+              animation-fill-mode: forwards;
+              animation-timing-function: ease-out;
+            }
+
+            .username {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              height: 96px;
+              padding: 0 10px;
+              word-break: break-all;
+              font-size: 24px;
+              font-weight: 600;
+              color: #ab640e;
+            }
+          }
+        }
+
+        .btn-spin, .btn-stop {
+          position: absolute;
+          left: 722px;
+          bottom: 265px;
+          width: 220px;
+          height: 134px;
+          background: url("../../assets/img/spin.png") no-repeat center/100% 100%;
+          cursor: pointer;
+        }
+
+        .btn-stop {
+          background: url("../../assets/img/stop.png") no-repeat center/100% 100%;
+        }
+      }
+    }
+  }
+
+}

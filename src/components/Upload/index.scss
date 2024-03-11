@@ -1,0 +1,61 @@
+#fileInput {
+  display: none;
+}
+
+.upload {
+  display: inline-block;
+  text-align: center;
+}
+
+.file-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  line-height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+
+  .file-view {
+    display: none;
+    z-index: 99;
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 500px;
+    max-height: 280px;
+    padding: 10px 0;
+    white-space: pre-wrap;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+    background: #fff;
+
+    .username {
+      display: inline-block;
+      width: 25%;
+      text-align: center;
+    }
+  }
+
+  &:hover .file-view {
+    display: block;
+  }
+
+  .icon-close {
+    width: 14px;
+    height: 14px;
+    margin-left: 7px;
+  }
+}
+
+.file-input {
+  display: inline-block;
+  padding: 0 24px;
+  line-height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #eee;
+  cursor: pointer;
+}
